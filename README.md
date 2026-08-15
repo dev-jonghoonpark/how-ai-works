@@ -27,3 +27,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 
 - **[How RNN Works](https://github.com/dev-jonghoonpark/how-rnn-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-rnn-works/)
   - RNN 부흥기(2014–2016)를 따라가는 인터랙티브 노트 — 브라우저에서 직접 학습하는 min-char-rnn, LSTM 게이트 조작기, 선택적 드롭아웃 시각화, Deep Speech 2 빔서치 시뮬레이터, 이해도 퀴즈까지
+
+## Transformer
+
+- **[How Attention Works](https://github.com/dev-jonghoonpark/how-attention-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-attention-works/)
+  - Attention Is All You Need — seq2seq 병목과 Bahdanau attention부터 Q·K·V, causal mask, 멀티헤드, 위치 인코딩, Pointer Networks까지 12개 데모와 퀴즈로 직접 실험하며 배우는 인터랙티브 교육 자료
