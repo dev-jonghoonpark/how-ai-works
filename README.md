@@ -22,3 +22,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
   - ResNet의 동작 원리를 브라우저에서 직접 실험하며 배우는 인터랙티브 교육 자료
 - **[ResNet Bottleneck](https://github.com/dev-jonghoonpark/resnet-bottleneck)** · [🔗 데모](https://dev-jonghoonpark.github.io/resnet-bottleneck/)
   - ResNet Bottleneck Block에서 1x1 conv의 역할을 설명하는 인터랙티브 페이지
+
+## RNN
+
+- **[How RNN Works](https://github.com/dev-jonghoonpark/how-rnn-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-rnn-works/)
+  - RNN 부흥기(2014–2016)를 따라가는 인터랙티브 노트 — 브라우저에서 직접 학습하는 min-char-rnn, LSTM 게이트 조작기, 선택적 드롭아웃 시각화, Deep Speech 2 빔서치 시뮬레이터, 이해도 퀴즈까지
