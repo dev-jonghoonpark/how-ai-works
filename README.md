@@ -11,7 +11,7 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 - **[경사 하강법](https://github.com/dev-jonghoonpark/gradient-descent)** · [🔗 데모](https://dev-jonghoonpark.github.io/gradient-descent/)
   - 경사 하강법의 지그재그(진동) 현상을 다루는 인터랙티브 시각화 페이지
 - **[How Convolution Works](https://github.com/dev-jonghoonpark/how-conv-work)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-conv-work/)
-  - 합성곱(Convolution)은 실제로 무엇을 하는가 — "뒤집고·밀고·곱하고·더하기" 수학적 정의부터 임펄스 응답(LTI), 확률분포의 합, 합성곱 정리(DFT 검증), 2D 이미지 필터, CNN의 스트라이드·패딩까지 직접 실험하는 인터랙티브 교육 자료
+  - 합성곱(Convolution)은 실제로 무엇을 하는가 — "뒤집고·밀고·곱하고·더하기" 수학적 정의부터 임펄스 응답(LTI), 확률분포의 합, 합성곱 정리(DFT 검증), 2D 이미지 필터, 채널과 1×1 conv(ResNet bottleneck의 채널 변환), CNN의 스트라이드·패딩까지 직접 실험하는 인터랙티브 교육 자료
 
 ## AlexNet
 
