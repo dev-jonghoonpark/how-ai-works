@@ -10,6 +10,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 
 - **[경사 하강법](https://github.com/dev-jonghoonpark/gradient-descent)** · [🔗 데모](https://dev-jonghoonpark.github.io/gradient-descent/)
   - 경사 하강법의 지그재그(진동) 현상을 다루는 인터랙티브 시각화 페이지
+- **[How Backprop Works](https://github.com/dev-jonghoonpark/how-backprop-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-backprop-works/)
+  - 순전파·손실 함수·역전파 — 필터의 가중치는 어떻게 올바른 값을 찾아가는가. 손실 지형 드래그, 계산 그래프 위에서 한 단계씩 밟아 보는 연쇄 법칙, 실시간으로 사인 곡선을 배우는 신경망, 그리고 난수로 시작한 3×3 합성곱 필터가 손실과 기울기만 보고 소벨 필터로 수렴하는 과정까지 직접 실험하는 인터랙티브 교육 자료
 - **[How Convolution Works](https://github.com/dev-jonghoonpark/how-conv-work)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-conv-work/)
   - 합성곱(Convolution)은 실제로 무엇을 하는가 — "뒤집고·밀고·곱하고·더하기" 수학적 정의부터 임펄스 응답(LTI), 확률분포의 합, 합성곱 정리(DFT 검증), 2D 이미지 필터, 채널과 1×1 conv(ResNet bottleneck의 채널 변환), CNN의 스트라이드·패딩까지 직접 실험하는 인터랙티브 교육 자료
 
