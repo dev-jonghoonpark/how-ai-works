@@ -10,8 +10,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 
 - **[How Normal Distribution Works](https://github.com/dev-jonghoonpark/how-normal-distribution-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-normal-distribution-works/)
   - 정규분포와 중심극한정리 — AI 학습에서 종 모양이 자꾸 나오는 이유. 골턴 보드 라이브 시뮬레이션, μ·σ 곡선 조작과 68–95–99.7 규칙, 임의 분포에서 표본 평균 10,000개를 뽑는 CLT 실험, 합성곱으로 계산한 주사위 합의 정확한 분포, 뉴런 가중합 z=Σwx의 히스토그램과 1/√d 스케일링(Xavier/He), MSE = 가우시안 가정까지 직접 실험하는 인터랙티브 교육 자료
-- **[경사 하강법](https://github.com/dev-jonghoonpark/gradient-descent)** · [🔗 데모](https://dev-jonghoonpark.github.io/gradient-descent/)
-  - 경사 하강법의 지그재그(진동) 현상을 다루는 인터랙티브 시각화 페이지
+- **[How Gradient Descent Works](https://github.com/dev-jonghoonpark/how-gradient-descent-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-gradient-descent-works/)
+  - 경사 하강법은 왜 지그재그로 움직이는가 — 학습률 하나로 갈리는 수렴·진동·발산의 네 가지 운명, GD/Momentum/Adam 비교 실험실, 지그재그의 축별 분해, 조건수 κ와 학습률의 딜레마, 증상별 진단 가이드까지 직접 실험하는 인터랙티브 교육 자료
 - **[How Backprop Works](https://github.com/dev-jonghoonpark/how-backprop-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-backprop-works/)
   - 순전파·손실 함수·역전파 — 필터의 가중치는 어떻게 올바른 값을 찾아가는가. 손실 지형 드래그, 계산 그래프 위에서 한 단계씩 밟아 보는 연쇄 법칙, 실시간으로 사인 곡선을 배우는 신경망, 그리고 난수로 시작한 3×3 합성곱 필터가 손실과 기울기만 보고 소벨 필터로 수렴하는 과정까지 직접 실험하는 인터랙티브 교육 자료
 - **[How Convolution Works](https://github.com/dev-jonghoonpark/how-conv-work)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-conv-work/)
