@@ -25,7 +25,7 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 - **[ResNet Bottleneck](https://github.com/dev-jonghoonpark/resnet-bottleneck)** · [🔗 데모](https://dev-jonghoonpark.github.io/resnet-bottleneck/)
   - ResNet Bottleneck Block에서 1x1 conv의 역할을 설명하는 인터랙티브 페이지
 - **[ResNet의 BatchNorm](https://github.com/dev-jonghoonpark/resnet-batchnorm)** · [🔗 데모](https://dev-jonghoonpark.github.io/resnet-batchnorm/)
-  - 깊은 네트워크는 왜 배치 정규화가 필요한가 — BN 수식과 γ·β 분포 데모, ResNet 블록 안에서 BN의 위치, 브라우저에서 직접 계산하는 30층 신호 전파 시뮬레이션(BN·skip 토글), 학습 vs 추론 모드와 BN folding까지 다루는 페이지
+  - 깊은 네트워크는 왜 배치 정규화가 필요한가 — 정규화 개념부터 BN 수식과 γ·β 분포 데모, 역전파에서 γ·β·W가 업데이트되는 플로우 단계별 시각화, ResNet 블록 안에서 BN의 위치, 브라우저에서 직접 계산하는 30층 신호 전파 시뮬레이션(BN·skip 토글), 학습 vs 추론 모드와 BN folding까지 다루는 페이지
 
 ## N-gram
 
