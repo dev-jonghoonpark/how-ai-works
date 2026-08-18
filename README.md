@@ -30,6 +30,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
   - ResNet Bottleneck Block에서 1x1 conv의 역할을 설명하는 인터랙티브 페이지
 - **[ResNet의 BatchNorm](https://github.com/dev-jonghoonpark/resnet-batchnorm)** · [🔗 데모](https://dev-jonghoonpark.github.io/resnet-batchnorm/)
   - 깊은 네트워크는 왜 배치 정규화가 필요한가 — 정규화 개념부터 BN 수식과 γ·β 분포 데모, 역전파에서 γ·β·W가 업데이트되는 플로우 단계별 시각화, ResNet 블록 안에서 BN의 위치, 브라우저에서 직접 계산하는 30층 신호 전파 시뮬레이션(BN·skip 토글), 학습 vs 추론 모드와 BN folding까지 다루는 페이지
+- **[How Dilated Convolution Works](https://github.com/dev-jonghoonpark/how-dilated-conv-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-dilated-conv-works/)
+  - Dilated Convolution은 어떻게 풀링 없이 시야를 넓히는가 (Yu & Koltun, ICLR 2016) — 풀링이 분할 마스크를 뭉개는 과정, 확장률에 따른 커널 읽기 위치, 수용 영역의 지수적 확장(논문 Figure 1 재현), 컨텍스트 모듈(Table 1), 무작위 vs 항등 초기화 신호 전파 비교(ResNet과 같은 "항등 근처에서 시작" 논리), gridding effect까지 직접 실험하는 인터랙티브 교육 자료
 
 ## N-gram
 
