@@ -42,6 +42,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 
 - **[How RNN Works](https://github.com/dev-jonghoonpark/how-rnn-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-rnn-works/)
   - RNN 부흥기(2014–2016)를 따라가는 인터랙티브 노트 — 브라우저에서 직접 학습하는 min-char-rnn, LSTM 게이트 조작기, 선택적 드롭아웃 시각화, Deep Speech 2 빔서치 시뮬레이터, 이해도 퀴즈까지
+- **[How char-rnn Works](https://github.com/dev-jonghoonpark/how-char-rnn-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-char-rnn-works/)
+  - Karpathy 「The Unreasonable Effectiveness of Recurrent Neural Networks」(2015) 한국어 인터랙티브 해설 — 다섯 가지 시퀀스 처리 방식, step() 한 줄을 손으로 따라가기, 역전파 한 번에 확신도가 오르는 "hello" 실험실(순환 연결을 끊으면 손실이 이론적 하한에 갇힌다), PG·셰익스피어·위키백과·LaTeX·리눅스 다섯 실험의 설정과 실수, 온도 슬라이더, 브라우저에서 학습하는 아기 이름 생성기, 반복 100→4,000 샘플의 진화를 직접 재현하는 셰익스피어 LSTM, 예측 히트맵, 해석 가능한 셀을 상관계수로 찾아내는 셀 탐색기까지 직접 실험하는 인터랙티브 교육 자료
 
 ## seq2seq
 
