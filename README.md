@@ -38,6 +38,11 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 - **[How N-gram Works](https://github.com/dev-jonghoonpark/how-n-gram-work)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-n-gram-work/)
   - 세는 것만으로 언어를 예측하는 n-gram 언어 모델 — 편집 가능한 코퍼스로 카운트 행렬, 텍스트 생성, 희소성, 스무딩, 퍼플렉시티까지 직접 실험하는 인터랙티브 교육 자료
 
+## 단어 임베딩
+
+- **[How word2vec Works](https://github.com/dev-jonghoonpark/how-word2vec-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-word2vec-works/)
+  - word2vec은 어떻게 "king − man + woman ≈ queen"을 만드는가 — 원-핫의 직교성 문제와 분포 가설, 윈도우로 학습 쌍 만들기(CBOW vs Skip-gram), 은닉층 없는 행렬 두 개, 소프트맥스 병목을 푸는 계층적 소프트맥스(허프만 트리 경로 시각화)와 네거티브 샘플링, 빈도의 3/4 제곱 노이즈 분포, 서브샘플링 곡선, **브라우저에서 실제로 도는 SGNS 학습기**(주성분 2D 단어 지도·손실 곡선·최근접 이웃)와 방금 학습한 벡터로 계산하는 유추 계산기, 구(phrase) 병합 점수까지 직접 실험하는 인터랙티브 교육 자료
+
 ## RNN
 
 - **[How RNN Works](https://github.com/dev-jonghoonpark/how-rnn-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-rnn-works/)
