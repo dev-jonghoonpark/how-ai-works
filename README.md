@@ -54,6 +54,13 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 - **[How RNN Dropout Works](https://github.com/dev-jonghoonpark/how-rnn-dropout-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-rnn-dropout-works/)
   - 드롭아웃은 왜 순환 연결을 피해 가는가 (Zaremba, Sutskever & Vinyals, 2015) — 시간 축으로 펼친 격자에서 세로(비순환)와 가로(순환) 연결 구분, 수식 위 `D(h_t^{l-1})`의 위치, 정보가 손상되는 횟수를 직접 세는 논문 Figure 2·3 재현(**L+1** vs **L+1+Δt**)과 경로 생존 확률 로그 차트, 35스텝을 건너는 유닛 200개의 몬테카를로 생존 시뮬레이션, n=4 미니 LSTM 한 스텝을 실제로 계산하며 보는 게이트 손상, PTB 퍼플렉시티 114.5→78.4와 음성·번역 결과, Gal & Ghahramani·Zoneout의 마스크 샘플링 비교와 PyTorch 구현 주의점까지 직접 실험하는 인터랙티브 교육 자료
 
+## 음성 인식 (Deep Speech 2)
+
+- **[How Row Convolution Works](https://github.com/dev-jonghoonpark/how-row-convolution-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-row-convolution-works/)
+  - 행 합성곱(row convolution)은 어떻게 미래를 엿보는가 (Amodei et al., 2015 · 3.7절) — 양방향 RNN이 "말이 끝나야" 시작하는 문제를 세 구조 실시간 재생으로 비교, `/t/` vs `/d/`의 판별 증거가 늦게 도착해 lookahead를 늘려야 예측이 뒤집히는 과정, 식 (11)을 칸 클릭으로 직접 전개하며 확인하는 채널 비혼합(= depthwise 1D conv), τ·스텝 상수 지연 예산(논문 τ=19 · 40ms → 760ms), 채널을 섞었다면 파라미터가 정확히 d배(2,560배) 늘어 순환 스택 전체보다 커지는 계산, lookahead를 여러 층에 나누면 지연이 누적되는 이유, 근사가 양방향보다 CER이 낮았던 배포 결과까지 직접 실험하는 인터랙티브 교육 자료
+- **[How CTC Beam Search Works](https://github.com/dev-jonghoonpark/how-ctc-beam-search-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-ctc-beam-search-works/)
+  - 빔 서치는 무엇을 찾고 있는가 — DS2의 디코딩(3.8절·7.3절) — CTC 축약 2단계와 blank가 글자 경계를 만드는 이유, 4,096개 정렬 전수 열거로 드러나는 greedy의 실패(`"ct"` 0.204 vs `"cat"` 0.425), 접두사마다 `p_b`/`p_nb`를 따로 드는 이유와 **프레임 단위 prefix beam search 스텝 실행기**, 빔 폭 1→50의 포화(폭 2부터 정답·20에서 전수 열거와 100% 일치), `Q(y) = log p_ctc + α log p_lm + β·단어수`의 세 항을 α·β 슬라이더로 뒤집어 보는 재순위와 β가 없으면 단어를 빠뜨리는 이유, 배포 가지치기가 논문의 120만 회 → 8,000회 = 150배를 그대로 재현하는 계산기까지 직접 실험하는 인터랙티브 교육 자료
+
 ## seq2seq
 
 - **[How seq2seq Works](https://github.com/dev-jonghoonpark/how-seq2seq-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-seq2seq-works/)
