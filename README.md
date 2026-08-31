@@ -8,6 +8,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 
 ## 기초
 
+- **[How Mean and Variance Works](https://github.com/dev-jonghoonpark/how-mean-and-variance-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-mean-and-variance-works/)
+  - 평균과 분산에서 정규화 층까지 — LRN과 BatchNorm을 이해하는 데 필요한 것들. 편차 합이 왜 항상 0이고 왜 절댓값이 아니라 제곱인지, Min-Max와 Z-score가 **둘 다 아핀 변환이라 모양은 똑같이 보존된다**는 오해 깨기, 그럼에도 정규화 층이 z-score를 쓰는 진짜 이유(표본을 늘리면 범위는 2.1σ→6.5σ로 발산하지만 σ는 1.00으로 수렴), 칸을 클릭해 확인하는 (N,C,H,W) 축 선택기(BN·LN·IN·GN·LRN이 전부 같은 수식이고 축만 다르다는 것), 한 채널을 키우면 이웃이 눌리는 LRN 측면 억제 계산기, γ·β의 존재 이유, σ/√m을 그대로 재현하는 배치 크기별 통계 흔들림, 그리고 VGG의 재현 실패와 BatchNorm 등장으로 LRN이 사라진 경위까지 직접 실험하는 인터랙티브 교육 자료
 - **[How Normal Distribution Works](https://github.com/dev-jonghoonpark/how-normal-distribution-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-normal-distribution-works/)
   - 정규분포와 중심극한정리 — AI 학습에서 종 모양이 자꾸 나오는 이유. 골턴 보드 라이브 시뮬레이션, 점 드래그로 눈으로 확인하는 표준편차(편차²=정사각형 넓이), μ·σ 곡선 조작과 68–95–99.7 규칙, 임의 분포에서 표본 평균 10,000개를 뽑는 CLT 실험, 합성곱으로 계산한 주사위 합의 정확한 분포, 뉴런 가중합 z=Σwx의 히스토그램과 1/√d 스케일링(Xavier/He), MSE = 가우시안 가정까지 직접 실험하는 인터랙티브 교육 자료
 - **[How Gradient Descent Works](https://github.com/dev-jonghoonpark/how-gradient-descent-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-gradient-descent-works/)
