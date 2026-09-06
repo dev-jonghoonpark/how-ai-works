@@ -37,6 +37,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
   - ResNet Bottleneck Block에서 1x1 conv의 역할을 설명하는 인터랙티브 페이지
 - **[ResNet의 BatchNorm](https://github.com/dev-jonghoonpark/resnet-batchnorm)** · [🔗 데모](https://dev-jonghoonpark.github.io/resnet-batchnorm/)
   - 깊은 네트워크는 왜 배치 정규화가 필요한가 — 정규화 개념부터 BN 수식과 γ·β 분포 데모, 역전파에서 γ·β·W가 업데이트되는 플로우 단계별 시각화, ResNet 블록 안에서 BN의 위치, 브라우저에서 직접 계산하는 30층 신호 전파 시뮬레이션(BN·skip 토글), 학습 vs 추론 모드와 BN folding까지 다루는 페이지
+- **[ResNet DJL Lab](https://github.com/dev-jonghoonpark/resnet-djl-lab)** · [🔗 데모](https://dev-jonghoonpark.github.io/resnet-djl-lab/)
+  - v1과 v2의 차이는 새로운 연산이 아니라 **BN·ReLU·덧셈의 순서** 하나다 — DJL(Deep Java Library) 블록 API로 두 버전을 직접 구현해 파라미터 수를 torchvision·논문 값과 대조하고(ImageNet-18 11,689,512 / CIFAR-20 0.27M 정확히 일치), 잔차 경로의 conv 가중치를 0으로 만들면 출력이 입력과 **비트 단위로** 같아지는 항등 사상을 테스트로 증명한다. 배포된 페이지는 여기서 한 걸음 더 들어가, **고양이 사진 한 장이 순전파 → 손실 → 역전파 → 가중치 갱신 → 재순전파를 한 바퀴 도는 동안 실제로 나온 값**을 80단계 전부 받아 적은 것이다 — 단계마다의 특징 맵·값 범위·0이 된 칸의 비율, conv 출력 한 칸을 만드는 곱셈 27개, BatchNorm의 μ·σ²·γ·β 대입, 평균 풀링 64칸, Linear 내적 64항, `dL/dz = softmax(z) − onehot`, SGD 한 스텝의 `w − lr(g + wd·w)`까지 전부 Java에서 손으로 다시 계산해 엔진 값과 나란히 싣는다(그래디언트 640개를 뺀 나머지는 차이 0). v1/v2 토글로 post-activation과 pre-activation이 같은 이미지에서 어떻게 갈라지는지 볼 수 있다
 - **[How Dilated Convolution Works](https://github.com/dev-jonghoonpark/how-dilated-conv-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-dilated-conv-works/)
   - Dilated Convolution은 어떻게 풀링 없이 시야를 넓히는가 (Yu & Koltun, ICLR 2016) — 풀링이 분할 마스크를 뭉개는 과정, 확장률에 따른 커널 읽기 위치, 수용 영역의 지수적 확장(논문 Figure 1 재현), 컨텍스트 모듈(Table 1), 무작위 vs 항등 초기화 신호 전파 비교(ResNet과 같은 "항등 근처에서 시작" 논리), gridding effect까지 직접 실험하는 인터랙티브 교육 자료
 
