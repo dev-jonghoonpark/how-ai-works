@@ -6,6 +6,11 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 
 > [K-DEVCON AI 스터디](https://k-devcon.com/channel/6/post/563)를 준비하며 만들고 있는 자료들입니다. 계속 추가될 예정입니다.
 
+## 📖 용어 사전
+
+- **[dictionary.md](dictionary.md)**
+  - 자료를 읽다 막히는 용어를 정리합니다.
+
 ## 기초
 
 - **[How Mean and Variance Works](https://github.com/dev-jonghoonpark/how-mean-and-variance-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-mean-and-variance-works/)
