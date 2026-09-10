@@ -62,6 +62,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
   - LSTM은 어떻게 기억하는가 — 야코비안이 반복 곱해지며 생기는 기울기 소멸(λ^k vs f^k 로그 차트), 원소별 곱·덧셈만 지나는 셀 상태 레일, 망각·입력·갱신·출력 4단계 다이어그램, 게이트 조작기(유지·덮어쓰기·지우기·누적), 사람이 직접 심은 가중치로 괄호 깊이를 세는 LSTM 실행기, 핍홀·결합 게이트·GRU 변형과 파라미터 비교(4:3:1), 퀴즈 7문항까지 직접 실험하는 인터랙티브 교육 자료
 - **[How RNN Dropout Works](https://github.com/dev-jonghoonpark/how-rnn-dropout-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-rnn-dropout-works/)
   - 드롭아웃은 왜 순환 연결을 피해 가는가 (Zaremba, Sutskever & Vinyals, 2015) — 시간 축으로 펼친 격자에서 세로(비순환)와 가로(순환) 연결 구분, 수식 위 `D(h_t^{l-1})`의 위치, 정보가 손상되는 횟수를 직접 세는 논문 Figure 2·3 재현(**L+1** vs **L+1+Δt**)과 경로 생존 확률 로그 차트, 35스텝을 건너는 유닛 200개의 몬테카를로 생존 시뮬레이션, n=4 미니 LSTM 한 스텝을 실제로 계산하며 보는 게이트 손상, PTB 퍼플렉시티 114.5→78.4와 음성·번역 결과, Gal & Ghahramani·Zoneout의 마스크 샘플링 비교와 PyTorch 구현 주의점까지 직접 실험하는 인터랙티브 교육 자료
+- **[LSTM Text Generation](https://github.com/dev-jonghoonpark/lstm-text-generation)** · 💻 내 컴퓨터에서 실행
+  - 앞의 브라우저 자료들로 원리를 봤다면, 이번엔 직접 학습시켜 보는 쪽 — 정글북 원문으로 문자 단위 LSTM을 돌려 다음 한 글자를 예측하게 만드는 Keras 실습. 학습 데이터 (앞 60자 → 다음 1자) 쌍이 사람 손 없이 27,297개 만들어지는 과정, 2 epoch(`trann`·`brtong`)에서 50 epoch(`the monkeys`·`man-cun`)로 가며 실제로 달라지는 생성 결과, loss 0.5949에서 곡선이 평평해지는 것을 보고 "epoch를 더 늘릴지 `step`을 낮출지" 판단하는 법까지. 원-핫을 밀집 배열로 펼치면 왜 800MB가 되는지, `temperature`가 분포에 무엇을 하는지도 코드에서 짚는다. Python for Microscopists 167번 영상의 예제를 최신 라이브러리에서 돌아가게 고치고(`np.bool` 제거, `.keras` 저장, 동작하지 않던 `temperature` 복원 등 9곳) 한국어 해설을 붙였다 세로(비순환)와 가로(순환) 연결 구분, 수식 위 `D(h_t^{l-1})`의 위치, 정보가 손상되는 횟수를 직접 세는 논문 Figure 2·3 재현(**L+1** vs **L+1+Δt**)과 경로 생존 확률 로그 차트, 35스텝을 건너는 유닛 200개의 몬테카를로 생존 시뮬레이션, n=4 미니 LSTM 한 스텝을 실제로 계산하며 보는 게이트 손상, PTB 퍼플렉시티 114.5→78.4와 음성·번역 결과, Gal & Ghahramani·Zoneout의 마스크 샘플링 비교와 PyTorch 구현 주의점까지 직접 실험하는 인터랙티브 교육 자료
 
 ## 음성 인식 (Deep Speech 2)
 
