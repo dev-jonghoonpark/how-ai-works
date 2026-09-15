@@ -71,6 +71,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
   - 행 합성곱(row convolution)은 어떻게 미래를 엿보는가 (Amodei et al., 2015 · 3.7절) — 양방향 RNN이 "말이 끝나야" 시작하는 문제를 세 구조 실시간 재생으로 비교, `/t/` vs `/d/`의 판별 증거가 늦게 도착해 lookahead를 늘려야 예측이 뒤집히는 과정, 식 (11)을 칸 클릭으로 직접 전개하며 확인하는 채널 비혼합(= depthwise 1D conv), τ·스텝 상수 지연 예산(논문 τ=19 · 40ms → 760ms), 채널을 섞었다면 파라미터가 정확히 d배(2,560배) 늘어 순환 스택 전체보다 커지는 계산, lookahead를 여러 층에 나누면 지연이 누적되는 이유, 근사가 양방향보다 CER이 낮았던 배포 결과까지 직접 실험하는 인터랙티브 교육 자료
 - **[How CTC Beam Search Works](https://github.com/dev-jonghoonpark/how-ctc-beam-search-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-ctc-beam-search-works/)
   - 빔 서치는 무엇을 찾고 있는가 — DS2의 디코딩(3.8절·7.3절) — CTC 축약 2단계와 blank가 글자 경계를 만드는 이유, 4,096개 정렬 전수 열거로 드러나는 greedy의 실패(`"ct"` 0.204 vs `"cat"` 0.425), 접두사마다 `p_b`/`p_nb`를 따로 드는 이유와 **프레임 단위 prefix beam search 스텝 실행기**, 빔 폭 1→50의 포화(폭 2부터 정답·20에서 전수 열거와 100% 일치), `Q(y) = log p_ctc + α log p_lm + β·단어수`의 세 항을 α·β 슬라이더로 뒤집어 보는 재순위와 β가 없으면 단어를 빠뜨리는 이유, 배포 가지치기가 논문의 120만 회 → 8,000회 = 150배를 그대로 재현하는 계산기까지 직접 실험하는 인터랙티브 교육 자료
+- **[DS2 My Voice](https://github.com/dev-jonghoonpark/ds2-my-voice)** · [🔗 데모](https://dev-jonghoonpark.github.io/ds2-my-voice/) · 💻 내 컴퓨터에서 학습
+  - 앞의 자료들로 부품을 봤다면, 이번엔 DS2를 통째로 조립해 실제로 학습시켜 보는 쪽 — PyTorch로 직접 구현한 축소판 DeepSpeech2(Conv2d 2층 + 양방향 GRU 5층 + CTC, 18.5M)를 Zeroth-Korean 51.7시간으로 RTX 3070 한 장에서 1시간 40분 사전학습(CER 0.776 → 0.171)하고, 화면에 뜬 문장을 읽어 녹음한 **내 목소리 7분**으로 파인튜닝한다. 음절 11,172개 대신 초성·중성·종성 67개로 쪼개는 자모 토크나이저, 짧은 발화부터 학습하는 SortaGrad, 처음 몇 epoch 동안 blank만 내보내는 CTC의 초기 현상까지 코드에서 짚는다. 결과는 학습에 쓰지 않은 내 목소리 19문장에서 CER 0.261 → 0.165(**화자 적응**), 대신 다른 화자 457문장은 0.171 → 0.237로 나빠지는 **망각**. 데모 페이지에서 같은 녹음을 두 모델이 어떻게 받아썼는지 틀린 글자 표시와 함께 들으며 비교할 수 있다
 
 ## seq2seq
 
