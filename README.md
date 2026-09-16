@@ -67,6 +67,9 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 
 ## 음성 인식 (Deep Speech 2)
 
+- **[How Deep Speech 2 Works](https://github.com/dev-jonghoonpark/how-deep-speech-2-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-deep-speech-2-works/)
+  - Deep Speech 2는 실제로 어떻게 동작하는가 (Amodei et al., 2015) — 논문 28쪽을 앞에서부터 따라가며 표와 수식이 나올 때마다 그 값을 브라우저에서 직접 계산해 보는 자료. 7초 발화가 순환층 안에서 스텝 350개가 되는 과정을 8단계로 추적하는 **모양 추적기**(스트라이드를 4로 올리면 영어 유니그램의 "토큰당 스텝"이 3.54 → 1.77로 떨어지고 바이그램이 2.82로 되살리는 것, 중국어는 7.61로 여유가 넘치는 것), **브라우저가 FFT를 직접 돌려 만드는 스펙트로그램**과 창 길이의 시간·주파수 해상도 맞교환, 식 (9)의 모든 정렬을 더하는 **CTC 전진 변수 α를 칸칸이 채우는 실행기**(전수 열거와 대조 검증: `cat`/T=7 → 정렬 210개 · `aa`는 blank 때문에 최소 3프레임), 식 7과 식 8이 통계를 재는 범위가 갈리는 이유와 BatchNorm이 **가장 얕은 모델에서는 오히려 해로웠던** 표 1, 첫 에포크 미니배치 구성기로 보는 SortaGrad, `h(t−1)`에 걸리는 **GEMM 3개가 1개로 합쳐지는** GRU 변형과 1억 파라미터에서 바닐라 RNN에 뒤집히는 표 11, 스펙트럼을 주파수축으로 밀어 **화자를 바꿔 보는 실험**(1D 불변 층의 출력은 코사인 0.39까지 무너지고 2D는 0.93~1.00을 유지), `the cat sat` → `[th, e, ␣, ca, t, ␣, sa, t]` 바이그램 분해기와 표 5, 표 10에 거듭제곱 법칙을 맞춰 목표 WER에 필요한 시간을 역산하기(논문의 "10배당 40%"가 실제로는 구간별 52.8%/38.7%인 것), 논문의 280 MB vs 1.5 GB를 재구성하는 12 GB 메모리 계산기, 11개 테스트셋에서 사람과의 승부, **Batch Dispatch 이산 사건 시뮬레이터**(eager batching이 10 스트림에서 중앙값 45ms를 내고, 배치를 채우려 기다리면 81ms로 나빠지는 것)까지 직접 실험하는 인터랙티브 교육 자료
+
 - **[How Row Convolution Works](https://github.com/dev-jonghoonpark/how-row-convolution-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-row-convolution-works/)
   - 행 합성곱(row convolution)은 어떻게 미래를 엿보는가 (Amodei et al., 2015 · 3.7절) — 양방향 RNN이 "말이 끝나야" 시작하는 문제를 세 구조 실시간 재생으로 비교, `/t/` vs `/d/`의 판별 증거가 늦게 도착해 lookahead를 늘려야 예측이 뒤집히는 과정, 식 (11)을 칸 클릭으로 직접 전개하며 확인하는 채널 비혼합(= depthwise 1D conv), τ·스텝 상수 지연 예산(논문 τ=19 · 40ms → 760ms), 채널을 섞었다면 파라미터가 정확히 d배(2,560배) 늘어 순환 스택 전체보다 커지는 계산, lookahead를 여러 층에 나누면 지연이 누적되는 이유, 근사가 양방향보다 CER이 낮았던 배포 결과까지 직접 실험하는 인터랙티브 교육 자료
 - **[How CTC Beam Search Works](https://github.com/dev-jonghoonpark/how-ctc-beam-search-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-ctc-beam-search-works/)
