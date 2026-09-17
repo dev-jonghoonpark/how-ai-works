@@ -23,6 +23,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
   - 순전파·손실 함수·역전파 — 필터의 가중치는 어떻게 올바른 값을 찾아가는가. 손실 지형 드래그, 계산 그래프 위에서 한 단계씩 밟아 보는 연쇄 법칙, 실시간으로 사인 곡선을 배우는 신경망, 그리고 난수로 시작한 3×3 합성곱 필터가 손실과 기울기만 보고 소벨 필터로 수렴하는 과정까지 직접 실험하는 인터랙티브 교육 자료
 - **[How Convolution Works](https://github.com/dev-jonghoonpark/how-conv-work)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-conv-work/)
   - 합성곱(Convolution)은 실제로 무엇을 하는가 — "뒤집고·밀고·곱하고·더하기" 수학적 정의부터 임펄스 응답(LTI), 확률분포의 합, 합성곱 정리(DFT 검증), 2D 이미지 필터, 채널과 1×1 conv(ResNet bottleneck의 채널 변환), CNN의 스트라이드·패딩까지 직접 실험하는 인터랙티브 교육 자료
+- **[How Fourier Transform Works](https://github.com/dev-jonghoonpark/how-fourier-transform-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-fourier-transform-works/)
+  - 푸리에 변환(FT)·DFT·FFT — **FFT는 다른 변환이 아니라 DFT를 N log N에 계산하는 알고리즘**이라는 것부터. 복소평면에서 도는 점의 실수부가 사인파가 되는 회전 데모, 사인파 N개로 사각파·삼각파를 쌓으며 보는 1/n vs 1/n² 수렴과 N=60에서도 남는 약 9%의 깁스 현상, 위상이 90° 어긋나면 cos 탐침만으로는 성분이 0으로 보여 e<sup>−i2πft</sup>가 필요해지는 "곱해서 평균 내기", 신호를 원점 둘레에 감아 무게중심을 재는 감기 기계, 수치 적분으로 확인하는 시간 폭×주파수 폭 = 상수(사각 1.207 · 가우시안 0.883), 12 Hz가 8 Hz로 접히는 에일리어싱, 회전 벡터 8개의 합으로 그리는 **8칸 DFT 계산기**, 짝/홀로 쪼개 X[k] = E[k] ± ω<sup>k</sup>·O[k]로 합치는 **FFT 재귀 실행기**(곱셈 64 → 12)와 순진한 DFT 대비 실측 속도, 누설·Hann 창·제로패딩(패딩으로는 못 가르고 N을 늘려야 갈라지는 두 톤), 평균·고역 커널의 주파수 응답으로 확인하는 합성곱 정리 Y = X·H까지 직접 실험하는 인터랙티브 교육 자료
 
 ## AlexNet
 
