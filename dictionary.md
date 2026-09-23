@@ -111,3 +111,46 @@ r[t,i] = Σ_j W[i,j] · h[t+j−1, i]        (식 11)
 > - [How Row Convolution Works](https://github.com/dev-jonghoonpark/how-row-convolution-works) — 세 구조(양방향·단방향·단방향+행 합성곱)를 실시간 재생으로 비교하고, 식 (11)을 칸 클릭으로 전개해 봅니다
 > - [How Deep Speech 2 Works](https://github.com/dev-jonghoonpark/how-deep-speech-2-works) — 연구용 모델과 배포 모델이 갈리는 지점을 논문 전체 맥락에서
 > - [How Attention Works](https://github.com/dev-jonghoonpark/how-attention-works) — causal mask가 Transformer에서 같은 역할을 합니다
+
+---
+
+## Post-LN / Pre-LN (잔차 블록에서 정규화를 어디에 두는가)
+
+**잔차 연결과 정규화 층의 순서.** 괄호 위치 하나 차이지만, 깊게 쌓았을 때 학습이 되느냐 마느냐가 여기서 갈립니다.
+
+```
+Post-LN (Attention Is All You Need, 2017)      Pre-LN (오늘날의 표준)
+
+  x ──┬─────────────────┐                        x ──┬──────────────────┐
+      │                 │                            │                  │
+      └─▶ Sublayer ─────┼─▶ (+) ─▶ LayerNorm ─▶      └─▶ LayerNorm ─▶ Sublayer ─▶ (+) ─▶
+                        │           ▲                                       ▲
+                     잔차가 매 층 LN을 통과                          잔차 경로가 뚫려 있다
+```
+
+| | Post-LN | Pre-LN |
+| --- | --- | --- |
+| 식 | `LayerNorm(x + F(x))` | `x + F(LayerNorm(x))` |
+| 잔차 스트림 크기 | 매 층 `√d`로 리셋 | **층마다 누적 — `√N`에 비례해 자람** |
+| 가지/줄기 비율 `‖F(x)‖/‖x‖` | 깊이와 무관하게 **일정** | **`1/√ℓ`로 감소** |
+| 깊게 쌓으면 | 층 하나의 영향력이 그대로 → 초기에 불안정 | 층이 저절로 항등에 가까워짐 → 안정 |
+| 워밍업 | **필수** (논문 4000스텝) | 없어도 학습됨 |
+| 추가로 필요한 것 | — | 마지막 블록 뒤 `final_layer_norm` 하나 |
+
+### 왜 이런 차이가 나는가
+
+Post-LN은 LN이 **맨 마지막**에 있어 잔차 스트림 크기를 매 층 되돌려 놓습니다. 그래서 각 층의 서브층 출력이 스트림의 **일정 비율을 계속 덮어씁니다** — 층을 아무리 쌓아도 층 하나의 상대적 영향력이 줄지 않고, 초기 상태가 조금만 어긋나면 위로 갈수록 증폭됩니다. 원 논문이 학습률을 4000스텝에 걸쳐 천천히 올린 이유가 이것입니다.
+
+Pre-LN은 반대입니다. 줄기는 더해지기만 해서 `√N`으로 자라는데 가지 출력은 입력을 먼저 LN으로 눌러 놓고 계산하므로 항상 `O(1)`입니다. 비율이 `1/√ℓ`로 떨어지니 **깊게 쌓을수록 각 층이 저절로 항등에 가까워집니다.** Xiong 외, 「On Layer Normalization in the Transformer Architecture」(ICML 2020)가 초기화 시점 기울기 크기로 이를 정리하고, Pre-LN에서는 워밍업을 제거할 수 있음을 실험으로 확인했습니다.
+
+### 자주 하는 오해
+
+- **"Pre-LN이 무조건 낫다"** — 잔차 스트림이 정규화되지 않은 채 계속 자라므로 마지막에 LN을 하나 더 붙여야 합니다. 같은 층 수·같은 학습 예산에서 Post-LN이 더 좋은 점수를 내는 경우도 보고됩니다.
+- **"LayerNorm은 BatchNorm의 변형이라 배치가 필요하다"** — 아닙니다. LN은 **한 샘플 한 토큰**의 `d`개 차원만으로 평균·분산을 냅니다. 배치와 무관하고, 길이가 제각각인 시퀀스에서도 문제가 없으며, 추론용 이동평균도 필요 없습니다. BN과 수식은 같고 **축만 다릅니다.**
+- **"ResNet의 v1/v2와는 다른 이야기"** — 같은 이야기입니다. ResNet v2의 pre-activation이 정확히 이 "정규화를 가지 안쪽으로 옮기기"입니다.
+
+> 관련 자료
+> - [How Transformer Works](https://github.com/dev-jonghoonpark/how-transformer-works) — 브라우저가 실제로 순전파해 가지/줄기 비율이 갈리는 것을 보여 주는 §5
+> - [How ResNet Works](https://github.com/dev-jonghoonpark/how-resnet-work) · [ResNet DJL Lab](https://github.com/dev-jonghoonpark/resnet-djl-lab) — BN·ReLU·덧셈의 순서 하나가 v1과 v2를 가른다
+> - [How Mean and Variance Works](https://github.com/dev-jonghoonpark/how-mean-and-variance-works) — BN·LN·IN·GN이 같은 수식이고 축만 다르다는 것을 칸 클릭으로
+> - [ResNet의 BatchNorm](https://github.com/dev-jonghoonpark/resnet-batchnorm) — 깊은 네트워크에 정규화가 왜 필요한가
