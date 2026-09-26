@@ -156,6 +156,7 @@ h_t = (1 − z_t) ⊙ h_{t−1} + z_t ⊙ h̃_t             섞기
 - **"GRU는 LSTM의 개선판이다"** — 나중에 나온 **단순화판**입니다. 표현력은 오히려 LSTM이 약간 넓고(위의 세기 문제), GRU가 주는 것은 3/4의 파라미터와 더 적은 연산입니다.
 
 > 관련 자료
+> - [How GRU Works](https://github.com/dev-jonghoonpark/how-gru-works) — 이 항목을 한 편으로 풀어낸 자료. 수술 단계 뷰어·합류 실험·카운터·브라우저 학습 비교
 > - [How LSTM Works](https://github.com/dev-jonghoonpark/how-lstm-works) — 셀 상태 레일과 게이트 조작기, 결합 게이트·GRU 변형과 파라미터 비교(LSTM : GRU : 바닐라 = 4 : 3 : 1)
 > - [How RNN Works](https://github.com/dev-jonghoonpark/how-rnn-works) — 게이트가 없을 때 무엇이 문제인지부터
 > - [How Deep Speech 2 Works](https://github.com/dev-jonghoonpark/how-deep-speech-2-works) — `h(t−1)`에 걸리는 GEMM 3개가 1개로 합쳐지는 GRU 변형과, 1억 파라미터에서 바닐라 RNN에 뒤집히는 표 11
