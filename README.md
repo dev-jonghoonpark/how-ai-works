@@ -113,3 +113,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 
 - **[How AlphaGo Works](https://github.com/dev-jonghoonpark/how-alphago-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-alphago-works/)
   - AlphaGo는 어떻게 동작하는가 (Silver et al., Nature 2016) — **분류용으로만 알던 CNN이 머리 하나만 바꿔 형세 판단기가 되는 과정**을 축으로 논문 전체를 따라가는 자료. 체스와 바둑의 b<sup>d</sup>를 비교하고 정책망은 너비를, 가치망은 깊이를 줄인다는 것을 보는 탐색 공간 계산기, 9×9 판에 돌을 놓으면 48장의 특징 평면(활로·따내기·자충·합리성)이 0/1 격자로 칠해지는 채널 뷰어와 8가지 대칭, 13층 CNN의 수용 영역(구석은 27×27로도 판 전체를 못 본다 → 축 평면을 손으로 넣은 이유), 브라우저가 실제로 끝까지 두는 롤아웃과 1/√n 신뢰구간, 128판씩 두며 기대 승률은 오르고 엔트로피는 0으로 떨어지는 REINFORCE 실험실, 같은 몸통(약 388만 파라미터)에 정책 머리 553개 ↔ 가치 머리 93,122개를 갈아 끼우는 **머리 바꾸기**, **±1 라벨만으로 MSE 최소점이 진짜 승률에 수렴하는 이유**("라벨은 미래에서 온다"), 한 판에서 뽑는 국면 수만 바꿔 train 0.02 / test 1.40으로 벌어지는 **기보 암기 재현 실험**(논문의 0.19 / 0.37 → 판당 1국면으로 해결), 정책망 1순위가 틀린 트리를 탐색이 뒤집는 **MCTS 선택·확장·평가·백업 단계 실행기**, 가치망과 롤아웃을 섞는 λ 스윕, 1순위가 같아도 뾰족한 RL 사전확률은 탐색이 되돌아오지 못하는 비교, 스레드가 한 후보로 몰리지 않게 하는 가상 손실, Elo → 승률 계산기(230점 = 79%)까지 직접 실험하는 인터랙티브 교육 자료
+
+## LLM 레퍼런스 노트
+
+- **[Alisa의 LLM 노트 (한국어 번역)](https://github.com/dev-jonghoonpark/book-of-llms-ko)** · [🔗 읽기](https://dev-jonghoonpark.github.io/book-of-llms-ko/)
+  - Alisa Liu의 「[Alisa’s book of LLMs](https://alisawuffles.notion.site/alisa-s-book-of-llms)」를 옮긴 비공식 번역 — 인터랙티브 데모가 아니라 **LLM 전반을 수식으로 한 장에 정리한 학습 노트**. MLP와 역전파의 행렬 shape 추적부터 수치 안정성 트릭, 현대 transformer의 파라미터·FLOPs·메모리 계산, RMSNorm·SwiGLU·RoPE, 추측 디코딩과 KV cache 줄이기(MQA·GQA·MLA), Flash Attention, scaling law, RNN·LSTM·상태 공간 모델, 정책 기울기에서 PPO·RLHF·GRPO·DPO까지의 사후 학습, 정밀도, 데이터·파이프라인·텐서 병렬화, 멀티모달까지. 다른 자료를 읽다 수식이 막힐 때 찾아보는 레퍼런스로 쓰기 좋다
