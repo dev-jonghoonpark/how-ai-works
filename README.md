@@ -91,6 +91,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 
 - **[How seq2seq Works](https://github.com/dev-jonghoonpark/how-seq2seq-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-seq2seq-works/)
   - seq2seq(2014)의 동작 원리 — 인코더·디코더 애니메이션, 고정 길이 병목, 입력 역순 트릭, 브라우저에서 직접 학습하는 미니 LSTM seq2seq(순방향 vs 역순 A/B 실험), 학습된 모델로 돌리는 빔 서치와 퀴즈까지
+- **[How set2seq Works](https://github.com/dev-jonghoonpark/how-set2seq-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-set2seq-works/)
+  - Order Matters: Sequence to Sequence for Sets (Vinyals, Bengio & Kudlur, ICLR 2016) — **체인 룰은 어떤 순서로 풀어도 같은 확률을 주는데, 왜 순서를 바꾸면 성능이 달라지는가**. 같은 숫자 다섯 개를 순서만 바꿔 넣으면 RNN의 마지막 상태는 달라지고 임베딩 합은 그대로인 실험, 번역 입력 뒤집기 BLEU +5.0·볼록 껍질 각도순 정렬 최대 +10%p(번호만 다시 매기면 정답 출력이 오름차순이 되는 데모), 식 (3)–(7)을 그대로 구현해 메모리를 섞어도 q*<sub>T</sub> 차이가 반올림 오차(~1e-16) 수준인 **Read-Process-Write**의 Process 블록, 포인터 네트워크와 glimpse, 표 1 정렬 실험(P = 0은 Ptr-Net보다 못하고 P ≥ 1이면 역전, N = 15에서는 최고 10%), 출력 순서 실험(PTB 순방향·역방향 86 vs 3단어 뒤집기 96, 파스 트리 깊이 우선 89.5% vs 너비 우선 81.5%)과 n!개 정답 동치류, 결합분포를 전부 나열해 계산한 별 모양 그래피컬 모델의 스텝별 조건부 엔트로피(합은 같고 조건부의 복잡도가 다르다), 그리고 순서를 모델이 고르게 하는 식 (9) — 120가지 순서의 확률을 전부 계산해 max 탐색과 조상 샘플링을 비교하고, 5! 순서를 섞어 줘도 퍼플렉시티 225로 돌아오는 5-gram 실험(표 2)까지 직접 실험하는 인터랙티브 교육 자료
 
 ## 메모리 증강 신경망
 
