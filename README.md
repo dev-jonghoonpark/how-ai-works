@@ -92,6 +92,11 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 - **[How seq2seq Works](https://github.com/dev-jonghoonpark/how-seq2seq-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-seq2seq-works/)
   - seq2seq(2014)의 동작 원리 — 인코더·디코더 애니메이션, 고정 길이 병목, 입력 역순 트릭, 브라우저에서 직접 학습하는 미니 LSTM seq2seq(순방향 vs 역순 A/B 실험), 학습된 모델로 돌리는 빔 서치와 퀴즈까지
 
+## 메모리 증강 신경망
+
+- **[How Neural Turing Machines Work](https://github.com/dev-jonghoonpark/how-ntm-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-ntm-works/)
+  - Neural Turing Machine은 어떻게 동작하는가 (Graves, Wayne & Danihelka, 「Neural Turing Machines」, 2014) — LSTM이 은닉 상태에 섞어 두던 기억을 **망 밖의 N × M 행렬**로 꺼내고, 어디를 읽고 쓸지를 정수 주소가 아니라 **모든 칸에 나눠 준 가중치**로 정해 전체를 경사 하강으로 학습할 수 있게 만든 방법을 3절 수식 (1)~(9) 순서대로 따라간다. 기억 칸을 늘리면 3층 LSTM의 파라미터는 제곱으로 느는데 NTM은 그대로인 계산기(복사 과제 **17,162 vs 1,352,969**, 79분의 1), 초점을 정수 사이로 움직이면 읽기 벡터가 끊김 없이 변하고 정수 주소는 계단이 되는 흐릿한 읽기, 덮어쓰기(e = 1)·누적(e = 0)·흐린 쓰기를 눌러 보는 지우기+더하기, 내용(β) → 보간(g) → 순환 이동(s) → 샤프닝(γ)을 한 화면에서 조작하며 논문의 세 가지 모드(내용만 · 내용으로 찾고 한 칸 옆 · 직전 위치에서 한 칸)를 확인하는 그림 2 파이프라인, 논문 예 s = (0.1, 0.8, 0.1)을 40번 반복하면 봉우리가 **0.14**로 무너지고 γ = 2면 **0.96**에서 버티는 번짐 실험과 0.7칸 분수 이동이 샤프닝 때문에 **40스텝에 28칸 대신 36칸** 가는 부작용, 논문의 복사 의사 코드를 컨트롤러 자리에 넣고 메모리 연산은 식 그대로 돌리는 **손으로 배선한 NTM**(시작 표지를 내용 주소로 찾아 돌아가기 — 이상적이면 길이 40도 틀린 비트 0, L > N이면 시작 표지까지 덮어써 출력 전체가 망가지고, 이동이 흐리면(p = 0.8) 96비트 중 27비트가 틀리지만 γ = 3이면 길이 30까지 다시 0), 정수 주소는 기울기 0으로 한 걸음도 못 가고 흐릿한 주소는 내려가지만 **출발점에 따라 골짜기에 멈추기도 하는** 경사 하강 비교, 다섯 과제 결과와 우선순위 정렬에서는 오히려 NTM이 파라미터가 더 많았던 표 1~3, 그리고 내용 주소 = 어텐션이라는 연결과 DNC까지 직접 실험하는 인터랙티브 교육 자료
+
 ## Transformer
 
 - **[How Attention Works](https://github.com/dev-jonghoonpark/how-attention-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-attention-works/)
