@@ -126,6 +126,34 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 - **[How AlphaGo Works](https://github.com/dev-jonghoonpark/how-alphago-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-alphago-works/)
   - AlphaGo (Silver et al., Nature 2016) — **분류용 CNN이 머리 하나만 바꿔 형세 판단기가 되는 과정**을 축으로. 탐색 공간 계산기, 48장 특징 평면 뷰어, 롤아웃과 REINFORCE, 정책 머리 ↔ 가치 머리 바꾸기, 기보 암기 재현 실험, MCTS 단계 실행기, Elo → 승률 계산기
 
+## 스케일링과 병렬화
+
+- **[How Scaling Laws Work](https://github.com/dev-jonghoonpark/how-scaling-laws-work)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-scaling-laws-work/)
+  - Scaling Laws for Neural Language Models (Kaplan et al., arXiv 2020) — **loss는 규모(N·D·C)의 멱법칙이라 학습하기 전에 계산할 수 있다**. 로그-로그 직선, L(N)·L(D)·L(C) 계산기, 작은 실험으로 175B loss 외삽하기, L(N,D) 과적합 경계, 6ND 연산 계산기, 연산 최적 배분, Chinchilla IsoFLOP 단면으로 보는 배분의 반전, 멱법칙이 깨지는 교차점
+- **[How GPipe Works](https://github.com/dev-jonghoonpark/how-gpipe-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-gpipe-works/)
+  - GPipe (Huang et al., NeurIPS 2019) — **모델은 층으로 자르고, 배치는 마이크로배치로 쪼개고, 갱신은 한 번에 — 그래서 장치를 몇 대로 나누든 학습되는 수학은 같다**. 표 1 메모리 계산기, K·M 파이프라인 타임라인 재생기, 버블 (K−1)/(M+K−1)과 표 2 비교, 셀 분할 DP, 재계산 활성 메모리 추적기, 동기식 누적 vs 지연된 기울기 학습 비교, GPipe vs 1F1B
+
+## 표현과 관계 추론
+
+- **[How VLAE Works](https://github.com/dev-jonghoonpark/how-vlae-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-vlae-works/)
+  - Variational Lossy Autoencoder (Chen et al., ICLR 2017) — **잠재 코드에는 디코더가 혼자 모델링할 수 없는 정보만 담긴다**. ELBO 계산기, Bits-Back 코드 장부, posterior collapse 재현, 디코더 창 크기만 바꾼 장난감 VLAE 7개(z 13.0 → 5.6비트, 브라우저 재학습), 압축 해제 뷰어, AF 사전분포 = IAF 사후분포, 비율–왜곡 평면
+- **[How Relation Network Works](https://github.com/dev-jonghoonpark/how-relation-network-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-relation-network-works/)
+  - A Simple Neural Network Module for Relational Reasoning (Santoro et al., NeurIPS 2017) — **모든 객체 쌍에 같은 함수 g를 적용하고 더한다**. n² 쌍 열거, 합으로 얻는 순서 불변성, 좌표 없는 CNN 칸은 섞어도 구분 못 하는 것, 브라우저에서 학습하는 Sort-of-CLEVR RN vs MLP, CLEVR 95.5% vs 사람 92.6%, 보이지 않는 용수철 찾기, n² 계산량과 셀프 어텐션
+- **[How Relational RNN Works](https://github.com/dev-jonghoonpark/how-relational-rnn-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-relational-rnn-works/)
+  - Relational Recurrent Neural Networks (Santoro et al., NeurIPS 2018) — **메모리 갱신을 [M; x] 위의 셀프 어텐션으로 바꿔, 같은 어텐션 한 번이 입력 받아들이기와 기억끼리의 비교를 함께 한다**. N번째로 먼 점, 슬롯·헤드 슬라이더와 어텐션 히트맵, 슬롯 수와 무관한 파라미터 계산기, 내적으로 거리를 계산하는 어텐션, Learning to Execute 생성기, BoxWorld, 퍼플렉시티 비교(슬롯 1개였다는 단서까지)
+
+## 복잡도와 압축
+
+- **[How Complexodynamics Works](https://github.com/dev-jonghoonpark/how-complexodynamics-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-complexodynamics-works/)
+  - The First Law of Complexodynamics (Aaronson, 2011 · Aaronson, Carroll & Ouellette, 2014) — **엔트로피는 상태를 통째로 적는 비용이고, 흥미로운 복잡도는 흐리게 본 뒤에도 남는 것을 적는 비용**. 섀넌 엔트로피와 압축, LZ77로 보는 콜모고로프 복잡도와 무작위의 함정, 두 부분 설명과 정교함, 복잡외연(complextropy), 브라우저에서 돌리는 커피 오토마톤과 엔트로피·복잡도 곡선(그림 2·10 재현), MDL로 보는 압축과 학습
+- **[How MDL Works](https://github.com/dev-jonghoonpark/how-mdl-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-mdl-works/)
+  - Keeping Neural Networks Simple by Minimizing the Description Length of the Weights (Hinton & van Camp, COLT 1993) — **일반화는 압축이다: 가중치에 담긴 정보가 훈련 출력에 담긴 정보보다 훨씬 적어야 한다**. 가중치·미스핏 비트, 가중치별 최적 정밀도, 노이즈 가중치의 KL, bits-back 시뮬레이터, 혼합 사전분포, 브라우저에서 학습하는 벌점 없음·가중치 감쇠·MDL 비교, ELBO·Bayes by Backprop으로의 연결
+
+## 지능의 정의와 안전
+
+- **[How Universal Intelligence Works](https://github.com/dev-jonghoonpark/how-universal-intelligence-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-universal-intelligence-works/)
+  - Machine Super Intelligence (Legg, PhD thesis 2008) · Universal Intelligence (Legg & Hutter, 2007) — **보편 지능은 단순한 환경일수록 크게 쳐 준 성적의 가중합**. 지능 정의 71개 탐색기, 솔로모노프 혼합 예측, 장난감 환경 15개 × 에이전트 7개로 계산하는 Υ(π), 가설 8개짜리 작은 AIXI, 예측기를 이기는 적대적 수열, 보상 장악·끄기 스위치 격자 세계, 참조 기계를 바꾸면 뒤집히는 지능 순위
+
 ## LLM 레퍼런스 노트
 
 - **[Alisa의 LLM 노트 (한국어 번역)](https://github.com/dev-jonghoonpark/book-of-llms-ko)** · [🔗 읽기](https://dev-jonghoonpark.github.io/book-of-llms-ko/)
