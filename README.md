@@ -132,6 +132,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
   - Scaling Laws for Neural Language Models (Kaplan et al., arXiv 2020) — **loss는 규모(N·D·C)의 멱법칙이라 학습하기 전에 계산할 수 있다**. 로그-로그 직선, L(N)·L(D)·L(C) 계산기, 작은 실험으로 175B loss 외삽하기, L(N,D) 과적합 경계, 6ND 연산 계산기, 연산 최적 배분, Chinchilla IsoFLOP 단면으로 보는 배분의 반전, 멱법칙이 깨지는 교차점
 - **[How GPipe Works](https://github.com/dev-jonghoonpark/how-gpipe-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-gpipe-works/)
   - GPipe (Huang et al., NeurIPS 2019) — **모델은 층으로 자르고, 배치는 마이크로배치로 쪼개고, 갱신은 한 번에 — 그래서 장치를 몇 대로 나누든 학습되는 수학은 같다**. 표 1 메모리 계산기, K·M 파이프라인 타임라인 재생기, 버블 (K−1)/(M+K−1)과 표 2 비교, 셀 분할 DP, 재계산 활성 메모리 추적기, 동기식 누적 vs 지연된 기울기 학습 비교, GPipe vs 1F1B
+- **[How Parallelism Works](https://github.com/dev-jonghoonpark/how-parallelism-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-parallelism-works/)
+  - 데이터·텐서·파이프라인·컨텍스트·전문가 병렬 — **하나만 쓰는 표준은 없고, 통신이 잦은 축일수록 가까운 GPU에 두는 하이브리드가 표준**. ZeRO 단계별 메모리 계산기, Megatron 텐서 병렬의 계산 대 all-reduce(NVLink vs 서버 사이), Mesh-TensorFlow 레이아웃, 버블과 interleaved, 인과 마스크 부하 균형, Llama 3 405B의 4D 병렬화(그림 5 그룹 탐색기, 표 4를 노드 단위로 그린 지도)
 
 ## 표현과 관계 추론
 
