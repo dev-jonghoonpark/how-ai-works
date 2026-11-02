@@ -146,6 +146,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 
 ## 복잡도와 압축
 
+- **[How Kolmogorov Complexity Works](https://github.com/dev-jonghoonpark/how-kolmogorov-complexity-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-kolmogorov-complexity-works/)
+  - 콜모고로프 복잡도 (Solomonoff 1964 · Kolmogorov 1965 · Chaitin 1966) — **규칙성이 있다는 것은 짧게 적을 수 있다는 것이고, 짧게 적을 수 있다는 것은 예측할 수 있다는 것**. 장난감 기계로 정확히 구하는 최단 설명, 불변성 정리, 대부분의 문자열이 압축되지 않는 개수 논증, 모든 프로그램을 시간 예산 안에서 돌려 보는 계산 불가능성, π·의사난수로 보는 압축기의 한계, 엔트로피·NCD 문서 묶기, 예측 = 압축과 솔로모노프 귀납
 - **[How Complexodynamics Works](https://github.com/dev-jonghoonpark/how-complexodynamics-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-complexodynamics-works/)
   - The First Law of Complexodynamics (Aaronson, 2011 · Aaronson, Carroll & Ouellette, 2014) — **엔트로피는 상태를 통째로 적는 비용이고, 흥미로운 복잡도는 흐리게 본 뒤에도 남는 것을 적는 비용**. 섀넌 엔트로피와 압축, LZ77로 보는 콜모고로프 복잡도와 무작위의 함정, 두 부분 설명과 정교함, 복잡외연(complextropy), 브라우저에서 돌리는 커피 오토마톤과 엔트로피·복잡도 곡선(그림 2·10 재현), MDL로 보는 압축과 학습
 - **[How MDL Works](https://github.com/dev-jonghoonpark/how-mdl-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-mdl-works/)
