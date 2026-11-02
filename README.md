@@ -156,6 +156,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
   - The First Law of Complexodynamics (Aaronson, 2011 · Aaronson, Carroll & Ouellette, 2014) — **엔트로피는 상태를 통째로 적는 비용이고, 흥미로운 복잡도는 흐리게 본 뒤에도 남는 것을 적는 비용**
 - **[How MDL Works](https://github.com/dev-jonghoonpark/how-mdl-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-mdl-works/)
   - Keeping Neural Networks Simple (Hinton & van Camp, 1993) — **일반화는 압축이다**. 가중치·미스핏 비트, bits-back 시뮬레이터, 가중치 감쇠·MDL 비교, ELBO로의 연결
+- **[How Model Compression Works](https://github.com/dev-jonghoonpark/how-model-compression-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-model-compression-works/)
+  - 모델 압축 — 가중치 양자화와 저계수 근사 (DeMoss 외, 2024) — **압축은 파라미터 공간이 아니라 함수 공간에서 일어난다**. 양자화 손 계산, PTQ·QAT 비교, SVD 저계수 근사
 
 ## 지능의 정의와 안전
 
