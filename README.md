@@ -164,10 +164,10 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 - **[How Universal Intelligence Works](https://github.com/dev-jonghoonpark/how-universal-intelligence-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-universal-intelligence-works/)
   - Machine Super Intelligence (Legg, PhD thesis 2008) · Universal Intelligence (Legg & Hutter, 2007) — **보편 지능은 단순한 환경일수록 크게 쳐 준 성적의 가중합**. 지능 정의 71개 탐색기
 
-## 실무 사례 (발표 정리)
+## 프라이버시와 연합 학습
 
-- **[연합 학습을 이용한 LINE 스티커 추천](talks/line-sticker-federated-learning.md)** · [▶ 영상](https://www.youtube.com/watch?v=v-VwByrji0c)
-  - 원리를 봤다면 실제 서비스에 들어간 모습을 보는 쪽 — **후보 생성은 서버, 재정렬은 단말, 재정렬 모델은 연합 학습**으로 나눠 맡긴 구조. 원본 로그 대신 로컬 모델만 올리고, 가우시안 메커니즘으로 로컬 차등 프라이버시 노이즈를 더하며, ONNX Runtime·버전 관리·학습 스케줄러를 갖춘 플랫폼으로 만들어 A/B 테스트에서 다운로드 +5.6%
+- **[How Federated Learning Works](https://github.com/dev-jonghoonpark/how-federated-learning-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-federated-learning-works/)
+  - 연합 학습 — LINE 스티커 추천(Tech-Verse 2022 [발표](https://www.youtube.com/watch?v=v-VwByrji0c))을 따라가며 **데이터를 모으는 대신 모델을 모으고, 그 대가로 통제권을 내준다**는 것을 축으로. 서버·온디바이스·연합 학습 배치의 데이터 흐름, 「あり」→「ありえ」 태그 추천, 후보 생성의 사용자 클러스터링(k vs 겹침), 폰 안의 노출·클릭 재정렬, K·C·E·ε를 바꿔 돌리는 FedAvg 시뮬레이터, 해석적 가우시안 메커니즘으로 보는 로컬 DP와 σ/√m, LFL 플랫폼 경로 실행기, 보조 기기에서 학습하지 않는 이유
 
 ## LLM 레퍼런스 노트
 
