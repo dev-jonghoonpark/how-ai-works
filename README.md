@@ -164,6 +164,11 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 - **[How Universal Intelligence Works](https://github.com/dev-jonghoonpark/how-universal-intelligence-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-universal-intelligence-works/)
   - Machine Super Intelligence (Legg, PhD thesis 2008) · Universal Intelligence (Legg & Hutter, 2007) — **보편 지능은 단순한 환경일수록 크게 쳐 준 성적의 가중합**. 지능 정의 71개 탐색기
 
+## 실무 사례 (발표 정리)
+
+- **[연합 학습을 이용한 LINE 스티커 추천](talks/line-sticker-federated-learning.md)** · [▶ 영상](https://www.youtube.com/watch?v=v-VwByrji0c)
+  - 원리를 봤다면 실제 서비스에 들어간 모습을 보는 쪽 — **후보 생성은 서버, 재정렬은 단말, 재정렬 모델은 연합 학습**으로 나눠 맡긴 구조. 원본 로그 대신 로컬 모델만 올리고, 가우시안 메커니즘으로 로컬 차등 프라이버시 노이즈를 더하며, ONNX Runtime·버전 관리·학습 스케줄러를 갖춘 플랫폼으로 만들어 A/B 테스트에서 다운로드 +5.6%
+
 ## LLM 레퍼런스 노트
 
 - **[Alisa의 LLM 노트 (한국어 번역)](https://github.com/dev-jonghoonpark/book-of-llms-ko)** · [🔗 읽기](https://dev-jonghoonpark.github.io/book-of-llms-ko/)
