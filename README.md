@@ -167,7 +167,7 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 ## 프라이버시와 연합 학습
 
 - **[How Federated Learning Works](https://github.com/dev-jonghoonpark/how-federated-learning-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-federated-learning-works/)
-  - 연합 학습 — LINE 스티커 추천(Tech-Verse 2022 [발표](https://www.youtube.com/watch?v=v-VwByrji0c))을 따라가며 **데이터를 모으는 대신 모델을 모으고, 그 대가로 통제권을 내준다**는 것을 축으로. 서버·온디바이스·연합 학습 배치의 데이터 흐름, 「あり」→「ありえ」 태그 추천, 후보 생성의 사용자 클러스터링(k vs 겹침), 폰 안의 노출·클릭 재정렬, K·C·E·ε를 바꿔 돌리는 FedAvg 시뮬레이터, 해석적 가우시안 메커니즘으로 보는 로컬 DP와 σ/√m, LFL 플랫폼 경로 실행기, 보조 기기에서 학습하지 않는 이유
+  - 연합 학습 — LINE 스티커 추천 (Tech-Verse 2022 [발표](https://www.youtube.com/watch?v=v-VwByrji0c)) — **데이터를 모으는 대신 모델을 모은다**. FedAvg 시뮬레이터, 후보 생성 클러스터링, 로컬 DP의 ε과 σ/√m
 
 ## LLM 레퍼런스 노트
 
