@@ -146,7 +146,7 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 - **[How Relation Network Works](https://github.com/dev-jonghoonpark/how-relation-network-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-relation-network-works/)
   - A Simple Neural Network Module for Relational Reasoning (Santoro et al., NeurIPS 2017) — **모든 객체 쌍에 같은 함수 g를 적용하고 더한다**. n² 쌍 열거, 합으로 얻는 순서 불변성
 - **[How MPNN Works](https://github.com/dev-jonghoonpark/how-mpnn-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-mpnn-works/)
-  - Neural Message Passing for Quantum Chemistry (Gilmer et al., ICML 2017) — **그래프 신경망 여덟 개는 메시지·갱신·판독 세 함수의 선택만 다르다**. 메시지 전달 단계 실행기, 순열 불변, 엣지 네트워크와 거리 표현, 가상 엣지·마스터 노드, set2set, 타워, QM9 결과, 브라우저에서 학습하는 MPNN
+  - Neural Message Passing for Quantum Chemistry (Gilmer et al., ICML 2017) — **그래프 신경망 여덟 개는 메시지·갱신·판독 세 함수의 선택만 다르다**. 메시지 전달 단계 실행기, 엣지 네트워크, 브라우저 학습
 - **[How Relational RNN Works](https://github.com/dev-jonghoonpark/how-relational-rnn-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-relational-rnn-works/)
   - Relational Recurrent Neural Networks (Santoro et al., NeurIPS 2018) — **메모리 갱신을 [M; x] 위의 셀프 어텐션으로 바꿔, 같은 어텐션 한 번이 입력 받아들이기와 기억끼리의 비교를 함께 한다**. N번째로 먼 점
 
