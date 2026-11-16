@@ -121,6 +121,11 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 - **[Annotated Transformer Step by Step](https://github.com/dev-jonghoonpark/annotated-transformer-step-by-step)** · [🔗 데모](https://dev-jonghoonpark.github.io/annotated-transformer-step-by-step/)
   - 위 노트북을 어디서부터 읽을지 막막할 때 — 어텐션 함수 11줄짜리 빈 파일에서 시작해 부품을 하나씩 더하며 **18단계 만에 원본 코드(1,031줄)를 완성**한다. 단계마다 diff·설명·실행 결과를 나란히 보여 준다(←/→)
 
+## 이미지 생성
+
+- **[How Text-to-Image Works](https://github.com/dev-jonghoonpark/how-text-to-image-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-text-to-image-works/)
+  - DALL·E (Ramesh 외, 2021) vs Stable Diffusion (Rombach 외, 2022) — **한 칸씩 쌓을까(자기회귀), 전체를 여러 번 다듬을까(확산)**. 실수 전파 비교, 노이즈와 주파수, DDIM, 가이던스
+
 ## 강화학습과 탐색 (AlphaGo)
 
 - **[How AlphaGo Works](https://github.com/dev-jonghoonpark/how-alphago-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-alphago-works/)
