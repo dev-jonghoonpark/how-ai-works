@@ -104,6 +104,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 
 - **[How Attention Works](https://github.com/dev-jonghoonpark/how-attention-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-attention-works/)
   - Attention Is All You Need — seq2seq 병목과 Bahdanau attention부터 Q·K·V, causal mask, 멀티헤드, 위치 인코딩, Pointer Networks까지 12개 데모와 퀴즈
+- **[How Multi-Head Attention Works](https://github.com/dev-jonghoonpark/how-multi-head-attention-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-multi-head-attention-works/)
+  - Multi-Head Scaled Dot-Product Attention (Vaswani et al., NeurIPS 2017) — **멀티헤드는 새 연산이 아니라 같은 내적 어텐션을 작은 공간 h개에서 따로 돌린 것**. √dₖ 포화 실험, 헤드 하나 vs 둘, 모양 추적기
 - **[그림으로 보는 Transformer](https://github.com/dev-jonghoonpark/illustrated-transformer-ko)** · [🔗 데모](https://dev-jonghoonpark.github.io/illustrated-transformer-ko/)
   - Jay Alammar의 [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) 순서를 따라 새로 쓴 한국어 해설(원문 번역은 [nlpinkorean](https://nlpinkorean.github.io/illustrated-transformer/)) — **그림 속 숫자를 직접 계산해 보는** 쪽. 셀프 어텐션이 순서를 모른다는 실험, q·k·v 손계산기
 - **[How Transformer Works](https://github.com/dev-jonghoonpark/how-transformer-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-transformer-works/)
