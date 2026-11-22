@@ -110,6 +110,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
   - Jay Alammar의 [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) 순서를 따라 새로 쓴 한국어 해설(원문 번역은 [nlpinkorean](https://nlpinkorean.github.io/illustrated-transformer/)) — **그림 속 숫자를 직접 계산해 보는** 쪽. 셀프 어텐션이 순서를 모른다는 실험, q·k·v 손계산기
 - **[How Transformer Works](https://github.com/dev-jonghoonpark/how-transformer-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-transformer-works/)
   - Transformer (Vaswani et al., NeurIPS 2017) — 앞 자료가 어텐션의 **내부**였다면 이쪽은 **블록과 모델 전체**. 블록의 무게는 FFN에 있고 학습 성패를 가른 건 **잔차와 LayerNorm의 순서**라는 것을 축으로 — 셀프 어텐션 vs 순환 비용
+- **[How SwiGLU Works](https://github.com/dev-jonghoonpark/how-swiglu-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-swiglu-works/)
+  - SwiGLU (Shazeer, 2020) — **활성화 함수가 아니라 FFN 구조: Swish로 만든 게이트 × 선형 값**. 유닛 출력 지도, 손계산기, 은닉 폭이 8d/3인 이유
 - **[How Positional Encoding Works](https://github.com/dev-jonghoonpark/how-positional-encoding-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-positional-encoding-works/)
   - 위치 인코딩은 왜 sin과 cos를 **함께** 쓰는가 — (sin, cos) 쌍은 도는 시계 바늘이라 "k칸 뒤"가 위치와 무관한 회전 행렬이 된다는 것, sin만으로는 안 되는 이유, 내적이 거리에만 의존하는 성질, 그리고 RoPE까지
 - **[How BERT Works](https://github.com/dev-jonghoonpark/how-bert-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-bert-works/)
