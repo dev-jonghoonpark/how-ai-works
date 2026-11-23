@@ -150,6 +150,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
   - Fully Sharded Data Parallel — Ahmed Taha의 [강의](https://www.youtube.com/watch?v=By_O0k102PY)를 따라 **메모리 → 통신 → DDP → 모델 자르기 → FSDP**로 쌓아 올린다. 메모리 계산기, NCCL 집합 통신 실행기, 한 스텝 재생기
 - **[How Mesh-TensorFlow Works](https://github.com/dev-jonghoonpark/how-mesh-tensorflow-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-mesh-tensorflow-works/)
   - Mesh-TensorFlow (Shazeer et al., NeurIPS 2018) — Noam Shazeer의 [발표](https://www.youtube.com/watch?v=HgGyWS40g-g)를 따라 — **차원에 이름을 붙여 메시에 나누면 같은 SPMD 프로그램이 모델 병렬이 된다**. MLP 분할 실행기, 레이아웃 계산기
+- **[How Switch Transformer Works](https://github.com/dev-jonghoonpark/how-switch-transformer-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-switch-transformer-works/)
+  - Switch Transformers (Fedus, Zoph & Shazeer, 2021) — **토큰마다 전문가 하나만 켜서, 연산은 그대로 두고 파라미터만 늘린다**. 라우터 손계산기, 용량·드롭 시뮬레이터, 브라우저에서 학습하는 부하 균형 손실
 - **[How Parallelism Works](https://github.com/dev-jonghoonpark/how-parallelism-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-parallelism-works/)
   - 데이터·텐서·파이프라인·컨텍스트·전문가 병렬 — **하나만 쓰는 표준은 없고, 통신이 잦은 축일수록 가까운 GPU에 두는 하이브리드가 표준**. ZeRO 단계별 메모리 계산기, Megatron 텐서 병렬의 계산 대 all-reduce(NVLink vs 서버 사이)
 
