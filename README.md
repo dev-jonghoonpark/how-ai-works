@@ -195,6 +195,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
   - Keeping Neural Networks Simple (Hinton & van Camp, 1993) — **일반화는 압축이다**. 가중치·미스핏 비트, bits-back 시뮬레이터, 가중치 감쇠·MDL 비교, ELBO로의 연결
 - **[How Model Compression Works](https://github.com/dev-jonghoonpark/how-model-compression-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-model-compression-works/)
   - 모델 압축 — 가중치 양자화와 저계수 근사 (DeMoss 외, 2024) — **압축은 파라미터 공간이 아니라 함수 공간에서 일어난다**. 양자화 손 계산, PTQ·QAT 비교, SVD 저계수 근사
+- **[How Knowledge Distillation Works](https://github.com/dev-jonghoonpark/how-knowledge-distillation-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-knowledge-distillation-works/)
+  - Distilling the Knowledge in a Neural Network (Hinton, Vinyals & Dean, 2015) — **정답이 아니라 오답들의 확률에서 배운다**. 온도 T로 보는 교사 출력, 브라우저 증류 학습, 본 적 없는 숫자 3 실험
 
 ## 지능의 정의와 안전
 
