@@ -148,6 +148,11 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 - **[How Parallelism Works](https://github.com/dev-jonghoonpark/how-parallelism-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-parallelism-works/)
   - 데이터·텐서·파이프라인·컨텍스트·전문가 병렬 — **하나만 쓰는 표준은 없고, 통신이 잦은 축일수록 가까운 GPU에 두는 하이브리드가 표준**. ZeRO 단계별 메모리 계산기, Megatron 텐서 병렬의 계산 대 all-reduce(NVLink vs 서버 사이)
 
+## 추론 모델
+
+- **[How DeepSeek-R1 Works](https://github.com/dev-jonghoonpark/how-deepseek-r1-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-deepseek-r1-works/)
+  - DeepSeek-R1 (DeepSeek-AI, 2025) — **풀이를 가르치지 않고 정답만 채점했더니 생각이 길어지고 검산이 생겼다**. GRPO 이점 계산기, 브라우저 미니 GRPO 학습, aha moment, 다수결 계산기
+
 ## 표현과 관계 추론
 
 - **[How VLAE Works](https://github.com/dev-jonghoonpark/how-vlae-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-vlae-works/)
