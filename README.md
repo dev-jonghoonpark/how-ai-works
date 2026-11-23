@@ -130,6 +130,11 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 - **[How Text-to-Image Works](https://github.com/dev-jonghoonpark/how-text-to-image-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-text-to-image-works/)
   - DALL·E (Ramesh 외, 2021) vs Stable Diffusion (Rombach 외, 2022) — **한 칸씩 쌓을까(자기회귀), 전체를 여러 번 다듬을까(확산)**. 실수 전파 비교, 노이즈와 주파수, DDIM, 가이던스
 
+## 추론 모델
+
+- **[How o1 Works](https://github.com/dev-jonghoonpark/how-o1-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-o1-works/)
+  - OpenAI o1 (OpenAI, 2024) — **답하기 전에 생각하는 데 계산을 쓴다: 사고 사슬을 RL로 학습해 테스트 시 계산이 새 스케일링 축이 된다**. 다수결·채점기 시뮬레이터, 검산 습관을 배우는 RL, 암호 해독 CoT
+
 ## 강화학습과 탐색 (AlphaGo)
 
 - **[How AlphaGo Works](https://github.com/dev-jonghoonpark/how-alphago-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-alphago-works/)
