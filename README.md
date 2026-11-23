@@ -140,10 +140,12 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 - **[How o1 Works](https://github.com/dev-jonghoonpark/how-o1-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-o1-works/)
   - OpenAI o1 (OpenAI, 2024) — **답하기 전에 생각하는 데 계산을 쓴다: 사고 사슬을 RL로 학습해 테스트 시 계산이 새 스케일링 축이 된다**. 다수결·채점기 시뮬레이터, 검산 습관을 배우는 RL, 암호 해독 CoT
 
-## 강화학습과 탐색 (AlphaGo)
+## 강화학습과 탐색 (AlphaGo · AlphaGo Zero)
 
 - **[How AlphaGo Works](https://github.com/dev-jonghoonpark/how-alphago-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-alphago-works/)
   - AlphaGo (Silver et al., Nature 2016) — **분류용 CNN이 머리 하나만 바꿔 형세 판단기가 되는 과정**을 축으로. 탐색 공간 계산기, 48장 특징 평면 뷰어, 롤아웃과 REINFORCE, 정책 머리 ↔ 가치 머리 바꾸기, 기보 암기 재현 실험
+- **[How AlphaGo Zero Works](https://github.com/dev-jonghoonpark/how-alphago-zero-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-alphago-zero-works/)
+  - AlphaGo Zero (Silver et al., Nature 2017) — **라벨의 출처가 사람 기보에서 자기 탐색(MCTS 방문 분포 π)으로 바뀌었다**. 17장 입력 평면 뷰어, PUCT 탐색 실험, 브라우저에서 처음부터 학습하는 미니 AlphaZero
 
 ## 스케일링과 병렬화
 
