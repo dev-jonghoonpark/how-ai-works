@@ -132,6 +132,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 
 ## 이미지 생성
 
+- **[How DDPM Works](https://github.com/dev-jonghoonpark/how-ddpm-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-ddpm-works/)
+  - Denoising Diffusion Probabilistic Models (Ho et al., NeurIPS 2020) — **노이즈를 더하는 과정을 거꾸로 배운다: 생성을 "섞인 노이즈 맞히기" 회귀 T개로 쪼갠다**. 스케줄 계산기, 1차원 역방향 실행기, 브라우저 학습
 - **[How Text-to-Image Works](https://github.com/dev-jonghoonpark/how-text-to-image-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-text-to-image-works/)
   - DALL·E (Ramesh 외, 2021) vs Stable Diffusion (Rombach 외, 2022) — **한 칸씩 쌓을까(자기회귀), 전체를 여러 번 다듬을까(확산)**. 실수 전파 비교, 노이즈와 주파수, DDIM, 가이던스
 
