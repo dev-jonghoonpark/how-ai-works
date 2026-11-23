@@ -130,6 +130,11 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
 - **[How Text-to-Image Works](https://github.com/dev-jonghoonpark/how-text-to-image-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-text-to-image-works/)
   - DALL·E (Ramesh 외, 2021) vs Stable Diffusion (Rombach 외, 2022) — **한 칸씩 쌓을까(자기회귀), 전체를 여러 번 다듬을까(확산)**. 실수 전파 비교, 노이즈와 주파수, DDIM, 가이던스
 
+## 지시 따르기와 RLHF
+
+- **[How InstructGPT Works](https://github.com/dev-jonghoonpark/how-instructgpt-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-instructgpt-works/)
+  - InstructGPT (Ouyang et al., NeurIPS 2022) — **사람의 선호 순위로 보상 모델을 만들고, 그 점수를 올리도록 PPO로 학습한다(RLHF)**. ChatGPT의 전신. 브라우저 보상 모델 학습, KL 벌점과 과최적화
+
 ## 추론 모델
 
 - **[How o1 Works](https://github.com/dev-jonghoonpark/how-o1-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-o1-works/)
