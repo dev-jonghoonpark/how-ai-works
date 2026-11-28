@@ -29,6 +29,8 @@ AI가 실제로 어떻게 동작하는지 — 브라우저에서 직접 실험�
   - 합성곱은 실제로 무엇을 하는가 — "뒤집고·밀고·곱하고·더하기" 정의에서 임펄스 응답, 합성곱 정리, 2D 이미지 필터, 채널과 1×1 conv, CNN의 스트라이드·패딩까지
 - **[How Fourier Transform Works](https://github.com/dev-jonghoonpark/how-fourier-transform-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-fourier-transform-works/)
   - 푸리에 변환·DFT·FFT — **FFT는 다른 변환이 아니라 DFT를 N log N에 계산하는 알고리즘**. 회전하는 점으로 보는 사인파, 깁스 현상, 에일리어싱, 8칸 DFT 계산기와 FFT 재귀 실행기, 창 함수와 제로패딩, 합성곱 정리
+- **[How Variational Inference Works](https://github.com/dev-jonghoonpark/how-variational-inference-works)** · [🔗 데모](https://dev-jonghoonpark.github.io/how-variational-inference-works/)
+  - 변분 추론 (Blei 외, 2017) — **log p(x) = ELBO + KL: 계산할 수 없는 적분을 ELBO 최대화로 바꾼다**. KL의 비대칭성, 평균장 CAVI, 재매개변수화 기울기, 블랙박스 VI
 
 ## AlexNet
 
